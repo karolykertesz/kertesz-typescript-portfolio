@@ -6,21 +6,13 @@ import { Navigation } from "./components/Navigation";
 import { Works } from "./pages/Works";
 function App() {
   return (
-    <div>
+    <div className="main">
       <Router>
+        {/* <Navigation /> */}
         <Switch>
-          <Navigation />
-          {/* {routes.map((route: RoutesConfig) => (
-            <div key={route.key}>
-              <Route
-                exact={true}
-                path={route.path}
-                component={route.component}
-              />
-            </div>
-          ))} */}
-
-          <Route component={Works} path="/projects" exact />
+          {routes.map((route: RoutesConfig) => (
+            <Route exact={true} {...route} />
+          ))}
         </Switch>
       </Router>
     </div>

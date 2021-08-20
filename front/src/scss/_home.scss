@@ -1,0 +1,36 @@
+.home-text {
+  background-color: red;
+}
+.home-image {
+  background-color: yellow;
+}
+.home-text,
+.home-image {
+  width: 50%;
+  padding: 65px;
+}
+
+.home-image .home-image-box {
+  max-width: 360px;
+  background-color: $grey-20;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 8px solid $grey-40;
+}
+.home-image .home-image-box img {
+  width: 70%;
+  height: 250px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-left: 60px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}

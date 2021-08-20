@@ -1,11 +1,6 @@
 .main {
-  width: 100%;
-  padding-top: 10vh;
-  background-color: red;
-}
-
-.nu {
-  background-color: red;
+  max-width: 1200px;
+  margin: auto;
 }
 
 header {
@@ -90,10 +85,58 @@ header .menu-btn-burger.open::after {
   transform: rotate(-45deg) translate(3px, -7px);
 }
 
+.home-text {
+  background-color: red;
+}
+
+.home-image {
+  background-color: yellow;
+}
+
+.home-text,
+.home-image {
+  width: 50%;
+  padding: 65px;
+}
+
+.home-image .home-image-box {
+  max-width: 360px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 8px solid rgba(255, 255, 255, 0.4);
+}
+
+.home-image .home-image-box img {
+  width: 70%;
+  height: 250px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-left: 60px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: none;
+}
+*::before {
+  box-sizing: border-box;
+}
+*::after {
+  box-sizing: border-box;
 }
 
 a {
@@ -105,13 +148,50 @@ li {
 }
 
 body {
-  height: 100vh;
-  background-image: url("../images/backgound.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  padding: 5vh 15px;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, rgba(255, 239, 213, 0.44), #ffd9b3);
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 16px;
+  line-height: 1.5;
+  color: rgba(17, 17, 17, 0.598);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+body::after {
+  box-sizing: border-box;
+}
+body::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: peru;
+  z-index: -1;
+  opacity: 0.15;
+}
+
+section {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  min-height: 90vh;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+.container {
+  background-color: plum !important;
+  padding: 0 40px;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
 }
 
 /*# sourceMappingURL=index.css.map */
