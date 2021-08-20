@@ -1,0 +1,71 @@
+header {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 7%;
+  background-color: rgb(235, 217, 194);
+  .manu-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 25px;
+    opacity: 0.9;
+    visibility: hidden;
+    overflow: hidden;
+    li a {
+      color: #fff;
+      padding: 10px;
+    }
+    &.open {
+      visibility: visible;
+    }
+  }
+
+  .menu-btn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 3;
+    height: 20px;
+    cursor: pointer;
+    @include transition-ease;
+    &-burger {
+      position: absolute;
+      right: 0;
+      top: 0.5rem;
+      width: 28px;
+      height: 3px;
+      background: #fff;
+      @include transition-ease;
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        width: 28px;
+        height: 3px;
+        background-color: #fff;
+        @include transition-ease;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        width: 28px;
+        height: 3px;
+        background-color: #fff;
+      }
+      &.open {
+        transform: rotate(720deg);
+        background: transparent;
+        &::before {
+          transform: rotate(45deg) translate(5px, 8px);
+        }
+        &::after {
+          transform: rotate(-45deg) translate(3px, -7px);
+        }
+      }
+    }
+  }
+}

@@ -16,3 +16,6 @@ export const appInit = (): void => {
     firebase.analytics();
   }
 };
+const db = firebase.database();
+const storage = firebase.storage();
+export { db, storage };

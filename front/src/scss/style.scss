@@ -1,0 +1,26 @@
+@import "./config";
+@import "./main";
+@import "./mixin";
+@import "./navigation";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+
+body {
+  height: 100vh;
+  background-image: url("../images/backgound.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  font-family: $main-font;
+  font-size: $base-font-size;
+  // object-fit: cover;
+}

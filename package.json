@@ -1,0 +1,21 @@
+{
+  "name": "kertesz-typescript-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:front": "npm run start --prefix front",
+    "start_dev": "npm run start:dev --prefix front"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karolykertesz/kertesz-typescript-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karolykertesz/kertesz-typescript-portfolio/issues"
+  },
+  "homepage": "https://github.com/karolykertesz/kertesz-typescript-portfolio#readme"
+}
