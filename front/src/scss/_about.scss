@@ -18,6 +18,13 @@
       padding: 5px 15px;
       border: 1px solid $grey-40;
       text-transform: capitalize;
+      margin: 0 10px 10px 0;
+      border-radius: 20px;
+      color: $orange-light;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
     }
   }
 }
@@ -39,8 +46,52 @@
 .image-box .about-img img {
   width: 100%;
   border-radius: 10px;
+  margin-bottom: auto;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+}
+.about-tabs {
+  margin: 20px;
+  .tab-item {
+    padding: 2px 0;
+    background-color: transparent;
+    border: none;
+    text-transform: capitalize;
+    display: inline-block;
+    color: $black-60;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 30px 0 0;
+    position: relative;
+    opacity: 0.5;
+    @include transition-ease;
+    &.active {
+      color: $orange-light;
+      opacity: 1;
+      cursor: auto;
+    }
+    &.active::before {
+      width: 100%;
+      background-color: $orange-light;
+    }
+    &:last-child {
+      margin: 0;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: $orange-light;
+    }
+    &:hover::before {
+      width: 100%;
+      @include transition-ease;
+    }
+  }
 }

@@ -1,8 +1,16 @@
-import React from "react";
-import { Skills } from "../helpers/data";
+import React, { useState } from "react";
+import { Skills, education } from "../helpers/data";
+import { EducationItem } from "../components/EducationItem";
+import { Experiance } from "../components/Experiance";
+import { Link } from "react-router-dom";
 const imgUrl = require("./../assets/kk.jpg");
 
 export const About: React.FC = () => {
+  const [selected, setSelected] = useState(false);
+  const selecvalue = () => {
+    setSelected(!selected);
+  };
+
   return (
     <section className="section-about sec-padding">
       <div className="container">
@@ -26,6 +34,7 @@ export const About: React.FC = () => {
               Deserunt consequatur unde iusto dolorum animi officiis beatae
               veniam dicta laborum veritatis, ullam repellendus illum sequi.
             </p>
+            <h3>Skills</h3>
             <div className="skills">
               {Skills.map((skill: string) => (
                 <div key={skill} className="skills-item">
@@ -33,6 +42,40 @@ export const About: React.FC = () => {
                 </div>
               ))}
             </div>
+            <div className="about-tabs">
+              <button
+                className="tab-item active "
+                data-target="#education"
+                onClick={() => selecvalue()}
+                disabled={!selected && true}
+              >
+                education
+              </button>
+              <button
+                className="tab-item"
+                data-target="#experience"
+                onClick={() => selecvalue()}
+                disabled={selected && true}
+              >
+                experience
+              </button>
+            </div>
+
+            <div
+              className={!selected ? "tab-content active" : "tab-content"}
+              id="education"
+            >
+              {education.map((item) => (
+                <EducationItem date={item.date} school={item.school} />
+              ))}
+            </div>
+
+            <div className={selected ? "tab-content active" : "tab-content"}>
+              <Experiance />
+            </div>
+            <Link to="/contact" className="btn">
+              contact me
+            </Link>
           </div>
         </div>
       </div>

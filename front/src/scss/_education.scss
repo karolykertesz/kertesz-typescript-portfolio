@@ -1,0 +1,58 @@
+.about-text {
+  .btn {
+    margin: 5px 0 5px 0;
+  }
+  .timeline {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 117%;
+      width: 1px;
+      top: 0;
+      left: 5px;
+      background-color: $orange-light;
+    }
+    &-item {
+      margin-bottom: 30px;
+      position: relative;
+      padding: 10px 0 0 40px;
+      h4 {
+        font-size: 18px;
+        text-transform: capitalize;
+        margin: 0 0 10px;
+        font-weight: 400;
+      }
+      .date {
+        display: block;
+        color: $orange-light;
+        font-weight: 400;
+        margin: 0 0 10px;
+      }
+      &:last-child {
+        margin-bottom: 5px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        height: 11px;
+        width: 11px;
+        background-color: $orange-light;
+        left: 0;
+        top: 16px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
+    }
+  }
+  .tab-content {
+    padding: 40px 0;
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
