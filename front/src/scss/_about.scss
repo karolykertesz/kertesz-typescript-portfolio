@@ -1,0 +1,46 @@
+.image-box {
+  width: 40%;
+  padding: 0 15px;
+}
+.about-text {
+  width: 60%;
+  padding: 0 15px;
+  padding: 5px 15px;
+  background-color: $grey-20;
+  border: 1px solid $grey-40;
+  text-transform: capitalize;
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    .skills-item {
+      background-color: $grey-20;
+      border: 1px solid $grey-40;
+      padding: 5px 15px;
+      border: 1px solid $grey-40;
+      text-transform: capitalize;
+    }
+  }
+}
+.about-text h3 {
+  text-transform: capitalize;
+  font-size: 20px;
+  margin: 20px 0;
+}
+.about-text .image-box .about-img {
+  max-width: 380px;
+  border: 1px solid $grey-40;
+  margin: auto;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.image-box .about-img img {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}

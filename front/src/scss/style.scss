@@ -3,6 +3,8 @@
 @import "./mixin";
 @import "./navigation";
 @import "./home";
+@import "./functions";
+@import "./about";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,16 +27,18 @@ li {
 body {
   padding: 5vh 15px;
   min-height: 100vh;
+  background-attachment: fixed;
   background-image: linear-gradient(
     to bottom right,
     $main-color,
     $secondary-color
   );
-  font-family: $main-font;
+  font-family: "Playfair Display", serif;
   font-size: $base-font-size;
   line-height: 1.5;
   color: $black-60;
   overflow-x: hidden;
+  font-weight: 300;
   // object-fit: cover;
   -webkit-tap-highlight-color: transparent;
   &::after {
@@ -52,6 +56,16 @@ body {
     opacity: 0.15;
   }
 }
+h1,
+h2 {
+  font-weight: 600;
+}
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
 section {
   background-color: $grey-20;
   border: 1px solid $grey-40;
@@ -61,12 +75,86 @@ section {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+  backdrop-filter: $blur-filter;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.sec-padding {
+  padding: 80px 0;
+}
+.section-title {
+  padding: 0 15px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.section-title h2 {
+  font-size: 40px;
+  text-transform: capitalize;
 }
 .container {
-  background-color: plum !important;
   padding: 0 40px;
 }
 img {
   width: 100%;
   vertical-align: middle;
+}
+.btn {
+  line-height: 1;
+  background-color: $grey-20;
+  padding: 10px 28px;
+  display: inline-block;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  color: set-color($grey-40);
+  font-weight: 500;
+  border: 1px solid $grey-40;
+  text-transform: capitalize;
+  font-family: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  color: set-color($orange-strong);
+  background-color: $orange-strong;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  z-index: -1;
+  @include transition-width;
+}
+.btn:hover::before {
+  width: 100%;
+}
+.btn:hover {
+  color: $white;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: $white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $orange;
 }

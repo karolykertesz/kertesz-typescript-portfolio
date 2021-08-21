@@ -1,0 +1,18 @@
+export const Skills = [
+  "Javasript",
+  "Typescript",
+  "React",
+  "Redux",
+  "React Native",
+  "Next.js",
+  "Node.js",
+  "Firebase",
+  "Express.js",
+  "MongoDb",
+  "PostgreSQL",
+  "Sass",
+  "Bootstrap",
+  "Semantic UI",
+  "HTML",
+  "CSS",
+];
