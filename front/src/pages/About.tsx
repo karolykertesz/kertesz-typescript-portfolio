@@ -44,7 +44,7 @@ export const About: React.FC = () => {
             </div>
             <div className="about-tabs">
               <button
-                className="tab-item active "
+                className={!selected ? "tab-item active" : "tab-item"}
                 data-target="#education"
                 onClick={() => selecvalue()}
                 disabled={!selected && true}
@@ -52,7 +52,7 @@ export const About: React.FC = () => {
                 education
               </button>
               <button
-                className="tab-item"
+                className={selected ? "tab-item active" : "tab-item"}
                 data-target="#experience"
                 onClick={() => selecvalue()}
                 disabled={selected && true}

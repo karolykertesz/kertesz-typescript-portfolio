@@ -13,7 +13,7 @@ export const Home: React.FC = () => {
             <Link to="/about" className="btn">
               more about me
             </Link>
-            <Link to="#" className="btn">
+            <Link to="/projects" className="btn">
               A FEW ACCOMPLISHMENTS
             </Link>
           </div>

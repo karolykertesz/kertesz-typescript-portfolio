@@ -10,12 +10,8 @@ const firebaseConfig = {
   measurementId: "G-KSB4YQHGWK",
 };
 
-export const appInit = (): void => {
+export const InitApp = () => {
   if (firebase.apps.length === 0) {
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+    return firebase.initializeApp(firebaseConfig);
   }
 };
-const db = firebase.database();
-const storage = firebase.storage();
-export { db, storage };
