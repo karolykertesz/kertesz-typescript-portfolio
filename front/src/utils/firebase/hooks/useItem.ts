@@ -1,10 +1,9 @@
-import react, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import firebase from "firebase";
 import { InitApp } from "../../firebase";
-import { Works } from "../../../interfaces/works.interface";
 InitApp();
 export const useWorkItem = (id: string) => {
-  const [workItem, setWorkitem] = useState<Works | {}>();
+  const [workItem, setWorkitem] = useState<any>();
   useEffect(() => {
     const dataItem = firebase
       .firestore()

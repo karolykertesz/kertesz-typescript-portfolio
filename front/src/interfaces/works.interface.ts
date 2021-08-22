@@ -1,6 +1,6 @@
 export interface Works {
   title: string;
-  images: Object[];
+  images: any[];
   description: string;
   github: string;
   technologies: string[];

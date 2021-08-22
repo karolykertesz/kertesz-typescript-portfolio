@@ -6,8 +6,8 @@ export const handleChange = (e: any): any => {
   // console.log(selected.substr(0, selected.length - 4));
 };
 const putData = async (item: any) => {
-  const dataref = firebase.firestore().collection("works").doc("flesh");
-  const storageRef = firebase.storage().ref("flesh");
+  const dataref = firebase.firestore().collection("works").doc("portfoliof");
+  const storageRef = firebase.storage().ref("portfolio");
   const storageChild = storageRef.child(item.name);
   await storageChild.put(item);
   const fileUrl = await storageChild.getDownloadURL();

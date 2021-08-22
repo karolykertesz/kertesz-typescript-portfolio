@@ -8,6 +8,7 @@ export const useIds = () => {
     const getDock = firebase
       .firestore()
       .collection("works")
+      .orderBy("created_at")
       .onSnapshot((doc) => {
         const docArr: string[] = [];
         const ids = doc.docs.forEach((d) => {

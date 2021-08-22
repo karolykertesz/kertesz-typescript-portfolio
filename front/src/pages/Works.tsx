@@ -1,4 +1,5 @@
 import React from "react";
+import firebase from "firebase";
 import { useIds } from "../utils/firebase/hooks/useIds";
 import { Worksitem } from "../components/WorksItem";
 export const Works: React.FC = () => {
