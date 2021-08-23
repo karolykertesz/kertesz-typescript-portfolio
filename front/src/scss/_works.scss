@@ -1,15 +1,125 @@
 .works-item {
   width: calc((100% / 3) - 30px);
+  margin: 0 15px 30px;
+  @include transition-fast;
+  h3 {
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 20px 0;
+  }
+
   &-thumb {
     padding: 10px;
     background-color: $grey-20;
+    border: 1px solid $grey-40;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 
     img {
       width: 100%;
-      height: auto;
     }
   }
-  margin: 0 15px 30px;
-  &-details {
+}
+.work-item-details {
+  display: none;
+}
+.portfolio-section {
+  padding-bottom: 50px;
+}
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  opacity: 1;
+  overflow-y: auto;
+  visibility: hidden;
+  &.open {
+    visibility: visible;
+    overflow-y: auto;
+    .pop-content {
+      transform: scale(1);
+      @include transition-fast;
+    }
+  }
+
+  .pop-inner {
+    min-height: 100vh;
+    padding: 40px 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .pop-content {
+      border-radius: 30px;
+      border: 1px solid $grey-40;
+      background-color: $grey-20;
+      padding: 30px;
+      width: 100%;
+      height: 100%;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
+      backdrop-filter: $blur-filter;
+      transform: scale(0.9);
+
+      .pop-header {
+        position: relative;
+        .pop-thumb {
+          img {
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            object-fit: cover;
+          }
+        }
+        .btn {
+          height: 40px;
+          width: 40px;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          right: -40px;
+          top: -40px;
+        }
+      }
+      .pop-body {
+        .description {
+          margin-bottom: 20px;
+          p {
+            text-transform: capitalize;
+            color: $orange-strong;
+          }
+        }
+        .general {
+          li {
+            margin-bottom: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            a {
+              text-transform: lowercase;
+              color: $orange-strong;
+            }
+          }
+          span {
+            font-weight: 300;
+          }
+        }
+      }
+    }
   }
 }
+// .popup.open {
+//   visibility: visible;
+//   overflow-y: auto;
+// }

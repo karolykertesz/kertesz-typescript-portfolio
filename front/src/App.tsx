@@ -2,11 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { routes } from "./helpers/Route";
 import { RoutesConfig } from "./interfaces/routes.interface";
-import { Navigation } from "./components/Navigation";
-import { Works } from "./pages/Works";
+import { useAppDispatch, useAppSelector } from "./utils/redux/hooks";
+
 function App() {
+  const value = useAppSelector((state) => state.model.isOpen);
+
   return (
-    <div className="main">
+    <div className={!value ? "main" : "main fade-out hide-scroll"}>
       <Router>
         {/* <Navigation /> */}
         <Switch>

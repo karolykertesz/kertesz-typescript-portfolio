@@ -1,4 +1,9 @@
 .main {
   max-width: 1200px;
   margin: auto;
+  @include transition-fast;
+
+  &.fade-out {
+    visibility: hidden;
+  }
 }

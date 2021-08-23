@@ -5,6 +5,13 @@
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
 }
+@mixin transition-fast {
+  transition: all 0.2s ease;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -ms-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+}
 @mixin transition-width {
   transition: width 0.3s ease;
   -webkit-transition: width 0.3s ease;
