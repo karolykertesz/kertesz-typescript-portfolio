@@ -317,6 +317,18 @@ header .menu-btn-burger.open::after {
   display: block;
 }
 
+.works-item {
+  width: calc((100% / 3) - 30px);
+  margin: 0 15px 30px;
+}
+.works-item-thumb {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.works-item-thumb img {
+  width: 100%;
+  height: auto;
+}
 * {
   box-sizing: border-box;
   margin: 0;

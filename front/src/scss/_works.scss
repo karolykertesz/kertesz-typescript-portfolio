@@ -1,0 +1,15 @@
+.works-item {
+  width: calc((100% / 3) - 30px);
+  &-thumb {
+    padding: 10px;
+    background-color: $grey-20;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  margin: 0 15px 30px;
+  &-details {
+  }
+}
