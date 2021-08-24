@@ -2,15 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { routes } from "./helpers/Route";
 import { RoutesConfig } from "./interfaces/routes.interface";
-import { useAppDispatch, useAppSelector } from "./utils/redux/hooks";
+import { useAppSelector } from "./utils/redux/hooks";
 
 function App() {
   const value = useAppSelector((state) => state.model.isOpen);
-
   return (
-    <div className={!value ? "main" : "main fade-out hide-scroll"}>
+    <div className={!value ? "main" : "main fade-out"}>
       <Router>
-        {/* <Navigation /> */}
         <Switch>
           {routes.map((route: RoutesConfig) => (
             <Route exact={true} {...route} />

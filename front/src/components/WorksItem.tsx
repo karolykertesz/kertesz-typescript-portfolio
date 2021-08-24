@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import { useWorkItem } from "../utils/firebase/hooks/useItem";
 import { addModal } from "../utils/reducers/model.reducer";
-import { useAppDispatch } from "../utils/redux/hooks";
+import { useAppDispatch, useAppSelector } from "../utils/redux/hooks";
+import { PopItem } from "./PopItem";
+type openItem = undefined | string;
+
 export const Worksitem: React.FC<{ doc: string }> = (props) => {
   const { doc } = props;
   const { workItem } = useWorkItem(doc);
-  const [isOpen, setisopen] = useState(false);
+  const [isOpen, setisopen] = useState<any>(undefined);
+  const value = useAppSelector((state) => state.model.isOpen);
   const dispatch = useAppDispatch();
-  const hendleclick = () => {
-    dispatch(addModal());
-    setisopen(!isOpen);
-  };
+
   const findMain =
     workItem &&
     workItem.images.find((item: { name: string }) => item.name === "main");
   const techNologies = workItem && workItem.technologies;
   const closeModal = () => {
-    if (isOpen) {
-      return hendleclick();
-    }
+    setisopen(undefined);
+    return dispatch(addModal(false));
+  };
+  const addId = () => {
+    setisopen(doc);
+    return dispatch(addModal(true));
   };
   return (
     <>
@@ -31,118 +35,14 @@ export const Worksitem: React.FC<{ doc: string }> = (props) => {
           <button
             type="button"
             className="btn view-project-btn"
-            onClick={hendleclick}
+            onClick={() => addId()}
           >
             View project Details
           </button>
-          <div className="work-item-details">
-            <div className="description">
-              <p>{workItem.description}</p>
-            </div>
-            <ul className="general">
-              <li>
-                Created -<span>{workItem.created_at}</span>
-              </li>
-              <li>
-                Technologies used -
-                <span>
-                  {techNologies &&
-                    techNologies.map((item: string) => (
-                      <span key={item}>{item} ,</span>
-                    ))}
-                </span>
-              </li>
-              <li>
-                Github -
-                <span>
-                  <a href={workItem.github} target="_blank">
-                    view project on github
-                  </a>
-                </span>
-              </li>
-              {workItem.page_url && (
-                <li>
-                  View The page Online -
-                  <span>
-                    <a href={workItem.page_url} target="_blank">
-                      click to visit the page
-                    </a>
-                  </span>
-                </li>
-              )}
-            </ul>
-          </div>
-          {workItem && (
-            <div
-              className={!isOpen ? "popup" : "popup open"}
-              onClick={closeModal}
-            >
-              <div className="pop-inner">
-                <div className="pop-content">
-                  <div className="pop-header">
-                    <button
-                      type="button"
-                      className="btn pp-close"
-                      onClick={hendleclick}
-                    >
-                      <i className="fas fa-times"></i>
-                    </button>
-                    <div className="pop-thumb">
-                      <img
-                        src={findMain.image_url}
-                        alt="main thumbnail image"
-                      />
-                    </div>
-                    <h3>{workItem.title}</h3>
-                  </div>
-                  <div className="pop-body">
-                    <div className="description">
-                      <p>{workItem.description}</p>
-                    </div>
-                    <ul className="general">
-                      <li>
-                        Created -<span>{workItem.created_at}</span>
-                      </li>
-                      <li>
-                        Technologies used -
-                        <span>
-                          {techNologies &&
-                            techNologies.map((item: string) => (
-                              <span key={item}>{item} ,</span>
-                            ))}
-                        </span>
-                      </li>
-                      <li>
-                        Github -
-                        <span>
-                          <a
-                            href={workItem.github}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            view project on github
-                          </a>
-                        </span>
-                      </li>
-                      {workItem.page_url && (
-                        <li>
-                          View The page Online -
-                          <span>
-                            <a
-                              href={workItem.page_url}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              click to visit the page
-                            </a>
-                          </span>
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {value && isOpen ? (
+            <PopItem isOpen={isOpen} value={value} closeModal={closeModal} />
+          ) : (
+            <div></div>
           )}
         </div>
       ) : (

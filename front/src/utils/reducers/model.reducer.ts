@@ -14,8 +14,8 @@ export const Models = createSlice({
   name: "model",
   initialState,
   reducers: {
-    addModal(state) {
-      state.isOpen = !state.isOpen;
+    addModal(state, action: PayloadAction<boolean>) {
+      state.isOpen = action.payload;
     },
   },
 });

@@ -338,6 +338,8 @@ header .menu-btn-burger.open::after {
   font-size: 20px;
   text-transform: capitalize;
   margin: 20px 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .works-item-thumb {
   padding: 10px;
@@ -433,11 +435,15 @@ header .menu-btn-burger.open::after {
 .popup .pop-inner .pop-content .pop-body .description p {
   text-transform: capitalize;
   color: #ff9933;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .popup .pop-inner .pop-content .pop-body .general li {
   margin-bottom: 10px;
   font-weight: 500;
   text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .popup .pop-inner .pop-content .pop-body .general li a {
   text-transform: lowercase;
@@ -445,6 +451,8 @@ header .menu-btn-burger.open::after {
 }
 .popup .pop-inner .pop-content .pop-body .general span {
   font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {

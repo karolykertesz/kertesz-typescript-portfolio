@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import firebase from "firebase";
 import { InitApp } from "../../firebase";
 InitApp();
-export const useWorkItem = (id: string) => {
+export const useWorkItem = (id: string | undefined) => {
   const [workItem, setWorkitem] = useState<any>();
   useEffect(() => {
     const dataItem = firebase
