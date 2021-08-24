@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useReducer } from "react";
 
 export const Contact: React.FC = () => {
   return (
@@ -42,6 +42,7 @@ export const Contact: React.FC = () => {
                     placeholder="Message me"
                     className="input-control"
                     required
+                    id="text-area"
                   ></textarea>
                 </div>
                 <div className="submit-btn">
@@ -54,7 +55,19 @@ export const Contact: React.FC = () => {
           </div>
           <div className="contact-info">
             <div className="contact-info-item">
-              <h3></h3>
+              <h3>Email</h3>
+              <p>karoly.kertesz11@gmail.com</p>
+            </div>
+            <div className="contact-info-item">
+              <h3>And here,as well </h3>
+              <div className="contact-info-item-links">
+                <a href="#" target="_blank" rel="noreferrer">
+                  <i className="fa fa-github"></i>
+                </a>
+                <a href="#" target="_blank" rel="noreferrer">
+                  <i className="fa fa-linkedin"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>

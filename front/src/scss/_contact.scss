@@ -1,0 +1,69 @@
+.contact-form {
+  width: 50%;
+  padding: 0 15px;
+  .input-group {
+    width: 100%;
+    margin-bottom: 30px;
+
+    .input-control {
+      display: block;
+      width: 100%;
+      height: 50px;
+      border-radius: 25px;
+      border: none;
+      font-family: inherit;
+      font-weight: 400;
+      font-size: 16px;
+      background-color: $grey-40;
+      padding: 0 20px;
+      color: $black-60;
+      border: 1px solid transparent;
+      @include transition-border;
+      &::placeholder {
+        color: $black-60;
+        opacity: 0.9;
+        font-weight: 300;
+      }
+      &:focus {
+        border-color: $grey-60;
+      }
+    }
+  }
+}
+#text-area {
+  height: 120px;
+  resize: none;
+  padding-top: 15px;
+}
+.contact-info {
+  width: 50%;
+  padding: 0 15px;
+  &-item {
+    margin: 0 0 30px;
+    padding: 0 0 0 20px;
+    h3 {
+      font-size: 20px;
+      text-transform: capitalize;
+      margin: 0 0 5px;
+    }
+    &-links {
+      a {
+        display: inline-flex;
+        height: 50px;
+        width: 50px;
+        background-color: $grey-40;
+        align-items: center;
+        justify-content: center;
+        color: $orange-strong;
+        border-radius: 50%;
+        border: 1px solid $grey-20;
+        margin: 6px 14px 0 0;
+        @include transition-ease;
+        &:hover {
+          color: white;
+          background-color: $orange-strong;
+        }
+      }
+    }
+  }
+}
