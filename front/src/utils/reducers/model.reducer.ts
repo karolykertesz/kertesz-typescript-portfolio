@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 export interface Model {
-  isOpen?: boolean;
+  isOpen: boolean;
+  isHeader: boolean;
 }
 type Action = {
   type: string;
@@ -8,6 +9,7 @@ type Action = {
 };
 const initialState: Model = {
   isOpen: false,
+  isHeader: false,
 };
 
 export const Models = createSlice({
@@ -17,7 +19,10 @@ export const Models = createSlice({
     addModal(state, action: PayloadAction<boolean>) {
       state.isOpen = action.payload;
     },
+    setHeader(state) {
+      state.isHeader = !state.isHeader;
+    },
   },
 });
-export const { addModal } = Models.actions;
+export const { addModal, setHeader } = Models.actions;
 export default Models.reducer;

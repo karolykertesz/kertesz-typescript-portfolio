@@ -14,6 +14,6 @@ export const useWorkItem = (id: string | undefined) => {
         setWorkitem(data);
       });
     return () => dataItem();
-  }, []);
+  }, [id]);
   return { workItem };
 };

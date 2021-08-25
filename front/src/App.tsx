@@ -6,6 +6,7 @@ import { useAppSelector } from "./utils/redux/hooks";
 
 function App() {
   const value = useAppSelector((state) => state.model.isOpen);
+
   return (
     <div className={!value ? "main" : "main fade-out"}>
       <Router>

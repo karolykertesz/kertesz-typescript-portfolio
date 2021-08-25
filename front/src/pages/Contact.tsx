@@ -2,7 +2,7 @@ import React, { useRef, useReducer } from "react";
 
 export const Contact: React.FC = () => {
   return (
-    <section className="contact-section sec-padding">
+    <section className="contact-section sec-padding" id="contact">
       <div className="container">
         <div className="row">
           <div className="section-title">

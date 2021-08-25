@@ -28,8 +28,10 @@
   align-items: center;
 }
 .home-section {
-  display: flex;
   padding: 120px 0;
+  &.active {
+    display: flex;
+  }
 }
 .home-image .home-image-box {
   max-width: 360px;

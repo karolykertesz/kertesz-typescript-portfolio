@@ -7,7 +7,7 @@ export const Works: React.FC = () => {
   const { docs } = useIds();
 
   return (
-    <section className="works-section sec-padding">
+    <section className="works-section sec-padding" id="works">
       <div className="container">
         <div className="row">
           <div className="section-title">

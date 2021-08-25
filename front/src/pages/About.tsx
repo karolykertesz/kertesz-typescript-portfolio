@@ -12,7 +12,7 @@ export const About: React.FC = () => {
   };
 
   return (
-    <section className="section-about sec-padding">
+    <section className="section-about sec-padding" id="about">
       <div className="container">
         <div className="row">
           <div className="section-title">
@@ -73,7 +73,7 @@ export const About: React.FC = () => {
             <div className={selected ? "tab-content active" : "tab-content"}>
               <Experiance />
             </div>
-            <Link to="/contact" className="btn">
+            <Link to="/contact" className="btn link-item" target="_blank">
               contact me
             </Link>
           </div>
