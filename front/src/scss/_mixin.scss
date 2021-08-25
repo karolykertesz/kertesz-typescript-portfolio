@@ -26,3 +26,27 @@
   -ms-transition: width 0.4s ease;
   -o-transition: width 0.4s ease;
 }
+@mixin animationZoom {
+  animation: zoom 8s linear infinite;
+}
+@mixin animationBouce {
+  animation: bounce 5s ease-in-out infinite;
+}
+@keyframes zoom {
+  0%,
+  100% {
+    transform: scale(0.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}

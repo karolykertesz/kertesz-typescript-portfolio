@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useWorkItem } from "../utils/firebase/hooks/useItem";
-import { addModal } from "../utils/reducers/model.reducer";
+import { addModal, setOverlay } from "../utils/reducers/model.reducer";
 import { useAppDispatch, useAppSelector } from "../utils/redux/hooks";
 import { PopItem } from "./PopItem";
 type openItem = undefined | string;
@@ -18,11 +18,18 @@ export const Worksitem: React.FC<{ doc: string }> = (props) => {
   const techNologies = workItem && workItem.technologies;
   const closeModal = () => {
     setisopen(undefined);
+    resetOverLay();
     return dispatch(addModal(false));
   };
   const addId = () => {
     setisopen(doc);
     return dispatch(addModal(true));
+  };
+  const resetOverLay = () => {
+    dispatch(setOverlay(true));
+    return setTimeout(() => {
+      dispatch(setOverlay(false));
+    }, 500);
   };
   return (
     <>

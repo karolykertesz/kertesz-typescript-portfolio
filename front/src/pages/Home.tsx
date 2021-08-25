@@ -1,20 +1,25 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "../components/Header";
 import { useAppDispatch, useAppSelector } from "../utils/redux/hooks";
 import { setHeader } from "../utils/reducers/model.reducer";
+import { Circles } from "../components/Uicircles";
 const imgUrl = require("./../assets/kk.jpg");
 export const Home: React.FC = () => {
-  // const [isHeader, setHeader] = useState(false);
   const state = useAppSelector((state) => state.model.isHeader);
-  console.log(state);
+  const over = useAppSelector((state) => state.model.overlay);
   const dispatch = useAppDispatch();
   const toggleHeader = () => {
     dispatch(setHeader());
   };
+  const OverLay = () => {
+    return <div className={!over ? "overlay" : "overlay active"}></div>;
+  };
+  const route = "Home";
   return (
     <Fragment>
-      <Header toggleHeader={toggleHeader} state={state} />
+      <Header toggleHeader={toggleHeader} state={state} route={route} />
+      <Circles />
       <section
         className={
           !state
@@ -29,7 +34,7 @@ export const Home: React.FC = () => {
               <p>Hi ,I'm</p>
               <h1>Karoly Kertesz</h1>
               <h2>Full Stack Web Developer From Budapest</h2>
-              <Link to="/about" className="btn link-item">
+              <Link to="/about" className="btn">
                 more about me
               </Link>
               <Link to="/projects" className="btn link-item">

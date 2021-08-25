@@ -68,7 +68,7 @@
       -moz-border-radius: 30px;
       -ms-border-radius: 30px;
       -o-border-radius: 30px;
-      backdrop-filter: $blur-filter;
+      backdrop-filter: $blur-filter-1;
       transform: scale(0.9);
 
       .pop-header {
@@ -101,6 +101,7 @@
           p {
             text-transform: capitalize;
             color: $orange-strong;
+            font-weight: 400;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
           }

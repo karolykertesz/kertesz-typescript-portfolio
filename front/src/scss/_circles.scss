@@ -1,0 +1,51 @@
+.bg-circles {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  max-width: 1200px;
+  width: calc(100% - 30px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  div {
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .circle-1 {
+    height: 60px;
+    width: 60px;
+    background-color: $orange-strong;
+    left: 5%;
+    top: 10%;
+    opacity: 0.3;
+    @include animationZoom;
+  }
+  .circle-2 {
+    height: 80px;
+    width: 80px;
+    background-color: $orange-light;
+    left: 30%;
+    top: 35%;
+    opacity: 0.4;
+    @include animationBouce;
+  }
+  .circle-3 {
+    height: 120px;
+    width: 120px;
+    background-color: $white;
+    right: 10px;
+    top: 40%;
+    opacity: 0.6;
+    @include animationBouce;
+  }
+  .circle-4 {
+    height: 50px;
+    width: 50px;
+    background-color: $orange-very-dark;
+    left: 10px;
+    top: 80%;
+    opacity: 0.5;
+    @include animationBouce;
+  }
+}

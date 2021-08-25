@@ -31,3 +31,9 @@ export const routes = [
     key: 5,
   },
 ];
+export const paths = [
+  { name: "Home", path: "/" },
+  { name: "Contact", path: "/contact" },
+  { name: "Portfolio", path: "/projects" },
+  { name: "About Me", path: "/about" },
+];
