@@ -1,12 +1,14 @@
 import React from "react";
 import { useWorkItem } from "../utils/firebase/hooks/useItem";
+import { Link } from "react-router-dom";
 interface Props {
   isOpen: string | undefined;
   value: boolean | undefined;
   closeModal: () => void;
+  doc: string;
 }
 export const PopItem: React.FC<Props> = (props) => {
-  const { isOpen, value, closeModal } = props;
+  const { isOpen, value, closeModal, doc } = props;
   const { workItem } = useWorkItem(isOpen);
   const findMain =
     workItem &&
@@ -58,6 +60,12 @@ export const PopItem: React.FC<Props> = (props) => {
                       >
                         view project on github
                       </a>
+                    </span>
+                  </li>
+                  <li>
+                    Images -
+                    <span>
+                      <Link to={`/images/${doc}`}>view image gallery</Link>
                     </span>
                   </li>
                   {workItem.page_url && (

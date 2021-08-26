@@ -1,0 +1,40 @@
+.loader {
+  width: 100%;
+  position: absolute;
+  background-color: $grey-20;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-radius: 30px;
+  backdrop-filter: $blur-filter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease;
+  div {
+    border: 3px solid transparent;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    border-top-color: transparent !important;
+    border-bottom-color: transparent !important;
+    @include animation-spin;
+  }
+}
+.loader div:nth-child(1) {
+  height: 100px;
+  width: 100px;
+  border-color: $orange;
+}
+.loader div:nth-child(2) {
+  height: 80px;
+  width: 80px;
+  border-color: rgb(227, 227, 22);
+  animation-duration: 1.2s;
+}
+.loader div:nth-child(3) {
+  height: 60px;
+  width: 60px;
+  border-color: rgb(133, 216, 167);
+}

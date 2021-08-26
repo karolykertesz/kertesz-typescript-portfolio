@@ -47,7 +47,12 @@ export const Worksitem: React.FC<{ doc: string }> = (props) => {
             View project Details
           </button>
           {value && isOpen ? (
-            <PopItem isOpen={isOpen} value={value} closeModal={closeModal} />
+            <PopItem
+              isOpen={isOpen}
+              value={value}
+              closeModal={closeModal}
+              doc={doc}
+            />
           ) : (
             <div></div>
           )}

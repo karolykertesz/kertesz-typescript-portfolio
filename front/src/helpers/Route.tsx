@@ -21,7 +21,7 @@ export const routes = [
     key: 3,
   },
   {
-    path: "/skills",
+    path: "/images/:id",
     component: Things,
     key: 4,
   },
@@ -36,4 +36,5 @@ export const paths = [
   { name: "Contact", path: "/contact" },
   { name: "Portfolio", path: "/projects" },
   { name: "About Me", path: "/about" },
+  { name: "Things", path: "/images/:id" },
 ];
