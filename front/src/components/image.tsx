@@ -8,6 +8,7 @@ export const Image: React.FC<Props> = (props) => {
   return (
     <div className="img-wrap">
       <img alt={name} src={url} />
+      <div></div>
     </div>
   );
 };

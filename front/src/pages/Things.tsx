@@ -15,18 +15,40 @@ export const Things: React.FC = () => {
   const { id } = useParams<any>();
   const { images } = useImages(id);
   const dbImages = images && images;
+  const filtertedImages =
+    dbImages &&
+    dbImages.filter(
+      (item: { name: string; images_url: string }) => item.name !== "main"
+    );
+
   const route = "Things";
   return (
     <Fragment>
       <Header toggleHeader={toggleHeader} route={route} state={state} />
       <section>
-        <div className="image-grid">
-          {dbImages !== undefined &&
-            dbImages.map((image: { name: string; image_url: string }) => (
-              <div key={image.image_url}>
-                <Image url={image.image_url} name={image.name} />
-              </div>
-            ))}
+        <h2 className="title-h2">{id} gallery</h2>
+        <div className="row">
+          <div
+            className={
+              filtertedImages && filtertedImages.length <= 3
+                ? `column-${filtertedImages.length}`
+                : "cont"
+            }
+          >
+            {dbImages !== undefined &&
+              filtertedImages.map(
+                (image: { name: string; image_url: string }, indx: number) => (
+                  <div
+                    key={image.image_url}
+                    // style={{ ["--i" as any]: indx + 1 }}
+                    className="image"
+                  >
+                    <img src={image.image_url} alt={id + image.name} />
+                    <h1>{image.name}</h1>
+                  </div>
+                )
+              )}
+          </div>
         </div>
       </section>
     </Fragment>

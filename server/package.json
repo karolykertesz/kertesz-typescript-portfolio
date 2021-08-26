@@ -1,0 +1,26 @@
+{
+  "name": "kertesz-porfolio",
+  "version": "1.0.0",
+  "description": "kertesz karoly portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Kertesz Karoly",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "node-fetch": "^2.6.1",
+    "nodemailer": "^6.4.18",
+    "nodemailer-mailgun-transport": "^2.0.2",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^2.0.7"
+  },
+  "keywords": []
+}
