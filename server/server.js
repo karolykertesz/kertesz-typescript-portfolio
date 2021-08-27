@@ -18,22 +18,17 @@ app.get("/*", function (req, res) {
 });
 app.use(cors());
 
-app.post("/api", async (req, res) => {
+app.post("/api/email", async (req, res) => {
   const { email, subject, text, name } = req.body;
-
-  const value = validate(email, subject, text, name);
-
+  const value = await validate(email, subject, text, name);
   if (value !== undefined) {
-    res.status(400);
-    return;
+    return res.status(400).json({ m: "Wrong" });
   }
-
-  SendUserEmail(email, subject, text, name, (err, data) => {
+  return SendUserEmail(email, subject, text, name, (err, data) => {
     if (err) {
-      console.log(err);
-      res.status(400).json({ msg: err });
+      return res.status(400).json({ msg: err });
     } else {
-      res.status(200).json({ msg: "Thank You" });
+      return res.status(201).json({ msg: "Thank You" });
     }
   });
 });

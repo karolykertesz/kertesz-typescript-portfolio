@@ -3,6 +3,7 @@ export interface Model {
   isOpen: boolean;
   isHeader: boolean;
   overlay: boolean;
+  recapcha: boolean;
 }
 type Action = {
   type: string;
@@ -12,6 +13,7 @@ const initialState: Model = {
   isOpen: false,
   isHeader: false,
   overlay: false,
+  recapcha: false,
 };
 
 export const Models = createSlice({
@@ -30,7 +32,11 @@ export const Models = createSlice({
     setOverlay(state, action: PayloadAction<boolean>) {
       state.overlay = action.payload;
     },
+    setRecapcha(state, action: PayloadAction<boolean>) {
+      state.recapcha = action.payload;
+    },
   },
 });
-export const { addModal, setHeader, resetHeader, setOverlay } = Models.actions;
+export const { addModal, setHeader, resetHeader, setOverlay, setRecapcha } =
+  Models.actions;
 export default Models.reducer;

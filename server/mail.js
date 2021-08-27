@@ -16,9 +16,12 @@ module.exports = SendUserEmail = (email, subject, text, name, cb) => {
     from: process.env.US_DOM,
     to: process.env.EMAIL_KEY,
     subject: "email zoho",
-    html: `<b>Sender: ${name}</b>
+    html: `<p>Sender: ${name}</p>
+    </br>
     <b>Email: ${email}</b>
+    </br>
     <b>subject: ${subject}</b>
+    </br>
     <b>Message: ${text}</b> 
     `,
   };
