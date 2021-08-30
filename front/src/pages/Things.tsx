@@ -13,14 +13,15 @@ export const Things: React.FC = () => {
     dispatch(setHeader());
   };
   const { id } = useParams<any>();
-  const { images } = useImages(id);
+  const { images, type } = useImages(id);
+  console.log(type);
   const dbImages = images && images;
   const filtertedImages =
     dbImages &&
     dbImages.filter(
       (item: { name: string; images_url: string }) => item.name !== "main"
     );
-
+  const imgType = type === "web" ? "web" : "";
   const route = "Things";
   return (
     <Fragment>
@@ -31,8 +32,8 @@ export const Things: React.FC = () => {
           <div
             className={
               filtertedImages && filtertedImages.length <= 3
-                ? `column-${filtertedImages.length}`
-                : "cont"
+                ? `column-${filtertedImages.length} ${imgType}`
+                : `cont ${imgType}`
             }
           >
             {dbImages !== undefined &&
@@ -41,7 +42,7 @@ export const Things: React.FC = () => {
                   <div
                     key={image.image_url}
                     // style={{ ["--i" as any]: indx + 1 }}
-                    className="image"
+                    className={type === "web" ? "image web" : "image"}
                   >
                     <img src={image.image_url} alt={id + image.name} />
                     <h1>{image.name}</h1>

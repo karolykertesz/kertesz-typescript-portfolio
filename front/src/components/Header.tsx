@@ -12,7 +12,9 @@ interface Props {
 export const Header: React.FC<Props> = (props) => {
   const { state, route } = props;
 
-  const filteredRoutes = paths.filter((rt) => rt.name !== route);
+  const filteredRoutes = paths.filter(
+    (rt) => rt.name !== route && rt.name !== "Things"
+  );
   const dispatch = useAppDispatch();
   const resetHead = () => {
     dispatch(resetHeader(false));

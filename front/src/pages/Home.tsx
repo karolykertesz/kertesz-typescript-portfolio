@@ -33,7 +33,10 @@ export const Home: React.FC = () => {
             <div className="home-text">
               <p>Hi ,I'm</p>
               <h1>Karoly Kertesz</h1>
-              <h2>Full Stack Web Developer From Budapest</h2>
+              <h2>
+                a web developer with a passion for everything front-end. Welcome
+                to my corner of the internet. I'm glad you're here!
+              </h2>
               <Link to="/about" className="btn">
                 more about me
               </Link>

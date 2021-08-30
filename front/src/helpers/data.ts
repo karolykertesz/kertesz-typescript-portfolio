@@ -19,8 +19,8 @@ export const Skills = [
 ];
 
 export const education = [
-  { date: "2004-2007", school: "Dobos C Jozsef" },
-  { date: "2007-2009", school: "Vorosmarty Mihaly" },
+  { date: "2004-2007", school: "Dobos C Jozsef Szaközép iskola" },
+  { date: "2007-2009", school: "Vorosmarty Mihaly Gimnázium" },
   {
     date: "2020-2021",
     school: "Ruander Web developer and Web design Bootcamp",
@@ -28,5 +28,9 @@ export const education = [
   {
     date: "2021",
     school: "Udacity React Nanodegree",
+  },
+  {
+    date: "2021",
+    school: "Pirle Node.js Masterclass",
   },
 ];

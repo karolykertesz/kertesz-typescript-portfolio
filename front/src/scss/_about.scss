@@ -4,11 +4,11 @@
 }
 .about-text {
   width: 60%;
-  padding: 0 15px;
   padding: 5px 15px;
   background-color: $grey-20;
   border: 1px solid $grey-40;
   text-transform: capitalize;
+
   .skills {
     display: flex;
     flex-wrap: wrap;
@@ -32,6 +32,7 @@
   text-transform: capitalize;
   font-size: 20px;
   margin: 20px 0;
+  color: $orange-strong;
 }
 .about-text .image-box .about-img {
   max-width: 380px;
@@ -53,7 +54,6 @@
   -o-border-radius: 10px;
 }
 .about-tabs {
-  margin: 20px;
   .tab-item {
     padding: 2px 0;
     background-color: transparent;

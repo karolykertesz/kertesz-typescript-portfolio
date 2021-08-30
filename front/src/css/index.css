@@ -199,7 +199,6 @@ header .menu-btn-burger.open::after {
 
 .about-text {
   width: 60%;
-  padding: 0 15px;
   padding: 5px 15px;
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -228,6 +227,7 @@ header .menu-btn-burger.open::after {
   text-transform: capitalize;
   font-size: 20px;
   margin: 20px 0;
+  color: #ff9933;
 }
 
 .about-text .image-box .about-img {
@@ -251,9 +251,6 @@ header .menu-btn-burger.open::after {
   -o-border-radius: 10px;
 }
 
-.about-tabs {
-  margin: 20px;
-}
 .about-tabs .tab-item {
   padding: 2px 0;
   background-color: transparent;
@@ -903,6 +900,9 @@ header .menu-btn-burger.open::after {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+.cont.web {
+  grid-template-columns: 1fr 1fr;
+}
 
 .column-2 {
   margin-top: 50px;
@@ -921,11 +921,17 @@ header .menu-btn-burger.open::after {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+.column-3.web {
+  grid-template-columns: 1fr 1fr;
+}
 
 .image {
   display: inline-block;
   margin-bottom: 10px;
   overflow: hidden;
+}
+.image.web img {
+  width: 100%;
 }
 .image h1 {
   position: absolute;
@@ -947,13 +953,13 @@ header .menu-btn-burger.open::after {
   opacity: 0.9;
 }
 .image img {
-  width: 100%;
+  width: 90%;
   transition: 0.25s ease-in-out;
   object-fit: cover;
   border-radius: 5px;
 }
 .image img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 @media (max-width: 1024px) {

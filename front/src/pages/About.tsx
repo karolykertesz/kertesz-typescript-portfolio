@@ -42,14 +42,14 @@ export const About: React.FC = () => {
               </div>
             </div>
             <div className="about-text">
+              <h3>My Story</h3>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Eligendi omnis ad provident soluta rem optio facere architecto
-                placeat dolores deleniti nobis maxime eaque odit, fugiat
-                recusandae adipisci nulla qui obcaecati facilis voluptatibus
-                cumque magnam. Deserunt consequatur unde iusto dolorum animi
-                officiis beatae veniam dicta laborum veritatis, ullam
-                repellendus illum sequi.
+                I've always loved technology. From a young age, technology has
+                interested me.I always loved learning new skills, technologies
+                and computers always inspired me. With React it was the love at
+                first sight. I truly enjoy and i'm 'very passionate about design
+                and develop beautiful websites which focus on providing the best
+                experience for everyone using them.
               </p>
               <h3>Skills</h3>
               <div className="skills">

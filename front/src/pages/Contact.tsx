@@ -161,10 +161,18 @@ export const Contact: React.FC = () => {
               <div className="contact-info-item">
                 <h3>And here,as well </h3>
                 <div className="contact-info-item-links">
-                  <a href="#" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://github.com/karolykertesz"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="fa fa-github"></i>
                   </a>
-                  <a href="#" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.linkedin.com/in/karolykertesz"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="fa fa-linkedin"></i>
                   </a>
                 </div>

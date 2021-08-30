@@ -73,6 +73,9 @@
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  &.web {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .column-2 {
   margin-top: 50px;
@@ -89,12 +92,20 @@
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  &.web {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .image {
   display: inline-block;
   margin-bottom: 10px;
   overflow: hidden;
+  &.web {
+    img {
+      width: 100%;
+    }
+  }
 
   h1 {
     position: absolute;
@@ -113,12 +124,12 @@
     }
   }
   img {
-    width: 100%;
+    width: 90%;
     transition: 0.25s ease-in-out;
     object-fit: cover;
     border-radius: 5px;
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 }
