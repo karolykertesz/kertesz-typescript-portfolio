@@ -19,6 +19,7 @@ export const Home: React.FC = () => {
   return (
     <Fragment>
       <Header toggleHeader={toggleHeader} state={state} route={route} />
+      <OverLay />
       <Circles />
       <section
         className={

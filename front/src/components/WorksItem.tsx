@@ -3,7 +3,6 @@ import { useWorkItem } from "../utils/firebase/hooks/useItem";
 import { addModal, setOverlay } from "../utils/reducers/model.reducer";
 import { useAppDispatch, useAppSelector } from "../utils/redux/hooks";
 import { PopItem } from "./PopItem";
-type openItem = undefined | string;
 
 export const Worksitem: React.FC<{ doc: string }> = (props) => {
   const { doc } = props;
@@ -15,7 +14,7 @@ export const Worksitem: React.FC<{ doc: string }> = (props) => {
   const findMain =
     workItem &&
     workItem.images.find((item: { name: string }) => item.name === "main");
-  const techNologies = workItem && workItem.technologies;
+
   const closeModal = () => {
     setisopen(undefined);
     resetOverLay();
@@ -36,7 +35,7 @@ export const Worksitem: React.FC<{ doc: string }> = (props) => {
       {workItem ? (
         <div className="works-item">
           <div className="works-item-thumb">
-            <img src={findMain.image_url} alt="main thumbnail image" />
+            <img src={findMain.image_url} alt="main thumbnail" />
           </div>
           <h3 className="works-item-title">{workItem.title}</h3>
           <button
@@ -47,12 +46,14 @@ export const Worksitem: React.FC<{ doc: string }> = (props) => {
             View project Details
           </button>
           {value && isOpen ? (
-            <PopItem
-              isOpen={isOpen}
-              value={value}
-              closeModal={closeModal}
-              doc={doc}
-            />
+            <div className="pop-row">
+              <PopItem
+                isOpen={isOpen}
+                value={value}
+                closeModal={closeModal}
+                doc={doc}
+              />
+            </div>
           ) : (
             <div></div>
           )}

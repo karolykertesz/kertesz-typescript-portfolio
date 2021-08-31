@@ -29,7 +29,7 @@ export const PopItem: React.FC<Props> = (props) => {
                   <i className="fas fa-times"></i>
                 </button>
                 <div className="pop-thumb">
-                  <img src={findMain.image_url} alt="main thumbnail image" />
+                  <img src={findMain.image_url} alt="main thumbnail" />
                 </div>
                 <h3>{workItem.title}</h3>
               </div>

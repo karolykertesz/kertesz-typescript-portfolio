@@ -28,8 +28,9 @@ export const About: React.FC = () => {
   return (
     <Fragment>
       <Header state={state} route={route} toggleHeader={toggleHeader} />
+      <OverLay />
       <section className="section-about sec-padding" id="about">
-        <div className="container">
+        <div className={state ? "container headerOpen" : "container"}>
           <div className="row">
             <div className="section-title">
               <h2>About Me</h2>

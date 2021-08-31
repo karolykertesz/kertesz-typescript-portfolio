@@ -94,8 +94,9 @@ export const Contact: React.FC = () => {
   return (
     <Fragment>
       <Header state={state} toggleHeader={toggleHeader} route={route} />
+      <OverLay />
       <section className="contact-section sec-padding" id="contact">
-        <div className="container">
+        <div className={!state ? "container" : "container headerOpen"}>
           <div className="row">
             <div className="section-title">
               <h2>Thanks for taking the time to reach out!</h2>
@@ -180,7 +181,7 @@ export const Contact: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="capcha">
+        <div className={state ? "capcha active" : "capcha"}>
           <ReCAPTCHA sitekey={site} size="normal" onChange={reChange} />
         </div>
         <div className="error">{error && <p>{error}</p>}</div>

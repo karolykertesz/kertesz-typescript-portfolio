@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { paths } from "../helpers/Route";
 import { useAppDispatch } from "../utils/redux/hooks";
@@ -38,7 +38,7 @@ export const Header: React.FC<Props> = (props) => {
             <span id="toggle"></span>
           </button>
           <nav className="nav">
-            <div className="nav-inner">
+            <div className="nav-inner active">
               <ul>
                 {filteredRoutes.map((route) => (
                   <li key={route.name}>

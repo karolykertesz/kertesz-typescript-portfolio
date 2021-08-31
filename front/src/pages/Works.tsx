@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import firebase from "firebase";
 import { useIds } from "../utils/firebase/hooks/useIds";
 import { Worksitem } from "../components/WorksItem";
 import { useAppDispatch, useAppSelector } from "../utils/redux/hooks";
@@ -22,14 +21,16 @@ export const Works: React.FC = () => {
     <Fragment>
       <Header state={state} toggleHeader={toggleHeader} route={route} />
       <OverLay />
-      <section className="works-section sec-padding" id="works">
+      <section className="works-section sec-padding " id="works">
         <div className="container">
           <div className="row">
             <div className="section-title">
               <h2>Recent works</h2>
             </div>
           </div>
-          <div className="row works-row">
+          <div
+            className={!state ? "row works-row " : "row works-row headerOpen"}
+          >
             {docs && docs.map((item) => <Worksitem doc={item} />)}
           </div>
         </div>

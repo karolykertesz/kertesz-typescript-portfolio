@@ -77,6 +77,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &.active {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 .error {
   display: flex;

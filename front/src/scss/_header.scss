@@ -69,7 +69,7 @@
     visibility: hidden;
 
     &-inner {
-      min-height: calc(100vh - 70px);
+      min-height: calc(100vh - 45px);
       max-width: 1200px;
       margin: auto;
       background-color: $grey-20;
@@ -85,6 +85,7 @@
       justify-content: center;
       align-items: center;
       opacity: 0;
+
       @include transition-ease;
       ul li {
         text-align: center;
@@ -120,12 +121,20 @@
           }
         }
       }
+      &.active {
+        height: calc(100%);
+        z-index: 1000;
+        width: calc(100%);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+      }
     }
   }
   &.active {
     position: fixed;
     top: 35px;
-    // padding: 20px 15px;
   }
   &.active .container {
     max-width: 1200px;
@@ -155,4 +164,10 @@
 }
 .header:not(.active) .nav-toggle:hover span::after {
   width: 50%;
+}
+
+.headerOpen {
+  opacity: 0.5;
+  position: fixed !important;
+  overflow-y: hidden !important;
 }

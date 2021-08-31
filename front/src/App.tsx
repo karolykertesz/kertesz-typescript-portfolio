@@ -8,7 +8,7 @@ function App() {
   const value = useAppSelector((state) => state.model.isOpen);
 
   return (
-    <div className={!value ? "main" : "main fade-out"}>
+    <div className={!value ? "main hide-scroll" : "main fade-out"}>
       <Router>
         <Switch>
           {routes.map((route: RoutesConfig) => (

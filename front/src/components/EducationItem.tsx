@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { EducationItemInterface } from "../interfaces/about.interface";
 export const EducationItem: React.FC<EducationItemInterface> = (props) => {
   const { date, school } = props;
