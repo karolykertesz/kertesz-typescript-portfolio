@@ -9,7 +9,7 @@ export const Skills = [
   "Node.js",
   "Firebase",
   "Express.js",
-  "MongoDb",
+  "MongoDB",
   "PostgreSQL",
   "Sass",
   "Bootstrap",
