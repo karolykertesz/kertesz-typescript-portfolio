@@ -5,7 +5,7 @@ export const Skills = [
   "Redux",
   "React Native",
   "Next.js",
-  "Nest.js"
+  "Nest.js",
   "Node.js",
   "Firebase",
   "Express.js",
